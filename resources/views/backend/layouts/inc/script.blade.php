@@ -10,3 +10,6 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('assets/backend')}}/js/main.js"></script>
+<!--Toastr -->
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
