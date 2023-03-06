@@ -3,8 +3,7 @@
 @section('title') Category Index @endsection
 
 @push('admin_style')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 <style>
     .dataTables_length{
         padding: 20px 0;
@@ -40,7 +39,7 @@
                     @foreach ($categories as $category)
                         <tr>
                             <th scope="row">{{ $categories->firstItem()+$loop->index }}</th>
-                            <td><img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="" class="img-fluid rounded h-50 w-50"></td>
+                            <td><img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="" class="img-fluid rounded-circle" width="70"></td>
                             <td>{{ $category->updated_at->format('d M Y') }}</td>
                             <td>{{ $category->title }}</td>
                             <td>{{ $category->slug }}</td>
@@ -72,10 +71,11 @@
 @endsection
 
 @push('admin_script')
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.all.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $(document).ready(function () {
     $('#dataTable').DataTable({
